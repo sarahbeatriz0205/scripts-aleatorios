@@ -9,8 +9,10 @@ for i = 9, 1, -1 do
   local y = string.sub(cpf, i, i)
   local num = tonumber(y)
   for j = 2, 10 do
-    primeiro = num * j
-    x = primeiro + x
+    if i + j == 11 then
+      primeiro = num * j
+      x = primeiro + x 
+    end
   end
 end
 
@@ -28,7 +30,7 @@ cpf = cpf..primeiro
 for l = 1, 10 do
     local a = string.sub(cpf, l, l)
     local numero = tonumber(a)
-    for m = 2, 11 do
+    for m = 11, 2, -1 do
         if l + m == 12 then
             segundo = numero * m
             s = segundo + s
